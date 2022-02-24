@@ -20,6 +20,7 @@ export default {
         .patch(`/posts/${this.post.id}`, this.post)
         .then((response) => {
           console.log("Edit Post:", response.data);
+          localStorage.setItem("flashMessage", "Recipe successfully updated!");
           this.$router.push(`/posts/${this.post.id}`);
         })
         .catch((error) => {

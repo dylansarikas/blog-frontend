@@ -28,10 +28,12 @@ export default {
 
 <template>
   <div class="posts-show">
+    <!-- <p>Recipe user id: {{ recipe.user_id }}</p>
+    <p>Current user id: {{ currentUserId }}</p> -->
     <img v-bind:src="post.image" alt="" />
     <h2>{{ post.title }}</h2>
     <h2>{{ post.body }}</h2>
-    <div>
+    <div v-if="post.owner">
       <button><router-link v-bind:to="`/posts/${post.id}/edit`">Edit</router-link></button>
       |
       <button v-on:click="destroyPost()">Delete</button>
